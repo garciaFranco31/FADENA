@@ -58,7 +58,54 @@ Calcular para cada tipo de equipo el porcentaje de incidentes destruidos respect
 
 ```SQL
 
+SELECT 
+        t_totales.tipo_equipo,
+        t_totales.total_incidentes,
+        t_destruidos.destruidos,
+        ROUND(t_destruidos.destruidos * 100.0 / t_totales.total_incidentes, 2) AS porcentaje_destruidos
+    FROM (
+        SELECT t.nombre AS tipo_equipo, COUNT(*) AS total_incidentes    
+        FROM tipos_equipo AS t 
+        INNER JOIN sistemas AS s ON (t.id_tipo = s.id_tipo)
+        INNER JOIN incidentes AS i ON (s.id_sistema = i.id_sistema) 
+        GROUP BY t.nombre
+    ) AS t_totales
+    INNER JOIN (
+        SELECT t.nombre AS tipo_equipo, COUNT(*) AS destruidos    
+        FROM tipos_equipo AS t 
+        INNER JOIN sistemas AS s ON (t.id_tipo = s.id_tipo)
+        INNER JOIN incidentes AS i ON (s.id_sistema = i.id_sistema)
+        INNER JOIN estados AS e ON (i.id_estado = e.id_estado)
+        WHERE e.nombre = 'Destruido'
+        GROUP BY t.nombre
+    ) AS t_destruidos ON (t_totales.tipo_equipo = t_destruidos.tipo_equipo)
+    WHERE t_totales.total_incidentes >= 100
+    ORDER BY porcentaje_destruidos DESC;
 ```
+#### Resultado de la consulta
+| tipo_equipo | total_incidentes | destruidos | porcentaje_destruidos |
+| :--- | ---: | ---: | ---: |
+| Helicopters | 243 | 199 | 81.89 |
+| Self-Propelled Artillery | 1575 | 1269 | 80.57 |
+| Aircraft | 569 | 458 | 80.49 |
+| Trucks, Vehicles, and Jeeps | 6795 | 5181 | 76.25 |
+| Multiple Rocket Launchers | 591 | 446 | 75.47 |
+| Surface-To-Air Missile Systems | 709 | 522 | 73.62 |
+| Infantry Mobility Vehicles | 1055 | 761 | 72.13 |
+| Armoured Personnel Carriers | 5305 | 3786 | 71.37 |
+| Infantry Fighting Vehicles | 7445 | 5298 | 71.16 |
+| Unmanned Combat Aerial Vehicles | 506 | 353 | 69.76 |
+| Armoured Fighting Vehicles | 2052 | 1378 | 67.15 |
+| Radars | 137 | 92 | 67.15 |
+| Mine-Resistant Ambush Protected | 727 | 485 | 66.71 |
+| Tanks | 7261 | 4702 | 64.76 |
+| Self-Propelled Anti-Aircraft Guns | 156 | 100 | 64.10 |
+| Towed Artillery | 908 | 544 | 59.91 |
+| Reconnaissance Unmanned Aerial Vehicles | 228 | 126 | 55.26 |
+| Engineering Vehicles And Equipment | 827 | 452 | 54.66 |
+| Command Posts And Communications Stations | 363 | 192 | 52.89 |
+| Naval Ships | 137 | 66 | 48.18 |
+| Self-Propelled Anti-Tank Missile Systems | 117 | 33 | 28.21 |
 
 ---
 
@@ -69,7 +116,57 @@ Comparar la cantidad de incidentes de cada tipo entre `'2024-01-01'` y `'2024-08
 
 ```SQL
 
+SELECT incidentes_2024.tipo_equipo,
+incidentes_2024.t_incidentes_2024,
+incidentes_2025.t_incidentes_2025,
+(t_incidentes_2025 - t_incidentes_2024) as variacion
+FROM (
+	SELECT t.nombre as tipo_equipo, count(*) as t_incidentes_2024
+	FROM tipos_equipo as t
+	INNER JOIN sistemas as s on (t.id_tipo = s.id_tipo)
+	INNER JOIN incidentes as i on (s.id_sistema = i.id_sistema)
+	WHERE i.fecha BETWEEN '2024-01-01' AND '2024-08-21'
+	GROUP BY t.nombre
+) as incidentes_2024 
+INNER JOIN (
+	SELECT t.nombre as tipo_equipo, count(*) as t_incidentes_2025
+	FROM tipos_equipo as t
+	INNER JOIN sistemas as s on (t.id_tipo = s.id_tipo)
+	INNER JOIN incidentes as i on (s.id_sistema = i.id_sistema)
+	WHERE i.fecha BETWEEN '2025-01-01' AND '2025-08-21'
+	GROUP BY t.nombre
+) as incidentes_2025 ON (incidentes_2024.tipo_equipo = incidentes_2025.tipo_equipo)
+ORDER BY variacion DESC
+
 ```
+#### Resultado de la consulta
+| tipo_equipo | t_incidentes_2024 | t_incidentes_2025 | variacion |
+| :--- | ---: | ---: | ---: |
+| Mine-Resistant Ambush Protected | 78 | 284 | 206 |
+| Infantry Mobility Vehicles | 110 | 297 | 187 |
+| Armoured Fighting Vehicles | 311 | 402 | 91 |
+| Unmanned Ground Vehicles | 3 | 50 | 47 |
+| Command Posts And Communications Stations | 20 | 50 | 30 |
+| Reconnaissance Unmanned Aerial Vehicles | 2 | 22 | 20 |
+| Unmanned Combat Aerial Vehicles | 88 | 104 | 16 |
+| Anti-Aircraft Guns | 2 | 4 | 2 |
+| Artillery Support Vehicles And Equipment | 13 | 10 | -3 |
+| Naval Ships | 27 | 24 | -3 |
+| Jammers And Deception Systems | 7 | 3 | -4 |
+| Self-Propelled Anti-Tank Missile Systems | 5 | 1 | -4 |
+| Helicopters | 22 | 16 | -6 |
+| Radars | 32 | 18 | -14 |
+| Self-Propelled Anti-Aircraft Guns | 32 | 14 | -18 |
+| Multiple Rocket Launchers | 101 | 71 | -30 |
+| Self-Propelled Artillery | 292 | 262 | -30 |
+| Towed Artillery | 153 | 116 | -37 |
+| Armoured Personnel Carriers | 1041 | 996 | -45 |
+| Surface-To-Air Missile Systems | 139 | 85 | -54 |
+| Aircraft | 136 | 80 | -56 |
+| Engineering Vehicles And Equipment | 269 | 123 | -146 |
+| Trucks, Vehicles, and Jeeps | 965 | 744 | -221 |
+| Infantry Fighting Vehicles | 1671 | 1105 | -566 |
+| Tanks | 1553 | 861 | -692 |
 
 ---
 
@@ -79,7 +176,21 @@ Relacionar `incidentes` con `fuentes`. Para cada dominio contar cuántos sistema
 
 ```SQL
 
+SELECT f.dominio, COUNT(DISTINCT i.id_sistema) as sistemas_distintos
+FROM fuentes as f
+INNER JOIN incidentes as i ON (f.id_fuente = i.id_fuente)
+GROUP BY f.dominio
+ORDER BY sistemas_distintos DESC
+LIMIT 5
+
 ```
+DOMINIO        SISTEMAS DISTINTOS
+i.postimg.cc	1108
+twitter.com	416
+postimg.cc	136
+postlmg.cc	56
+x.com	12
+
 
 ---
 
@@ -89,8 +200,22 @@ Calcular para cada país operador la cantidad de incidentes por millón de habit
 - **Tip:** Obtener primero los incidentes por operador mediante una subconsulta en `FROM` y luego relacionar ese resultado con `paises`.
 
 ```SQL
-
+   SELECT p.nombre AS pais,
+           incidentes_operador.cantidad_incidentes,
+           p.poblacion,
+           ROUND(incidentes_operador.cantidad_incidentes * 1000000.0 / p.poblacion, 2) AS incidentes_por_millon
+    FROM (
+        SELECT id_pais_operador, COUNT(*) AS cantidad_incidentes
+        FROM incidentes
+        GROUP BY id_pais_operador
+    ) AS incidentes_operador
+    INNER JOIN paises AS p ON (incidentes_operador.id_pais_operador = p.id_pais)
+    ORDER BY incidentes_por_millon DESC;
 ```
+Ukraine	11111	37800000	293.94
+Russia	26851	143500000	187.11
+
+
 
 ---
 
