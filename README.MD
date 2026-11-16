@@ -33,11 +33,11 @@ Repositorio personal con el material de estudio, apuntes, resúmenes y resolucio
 #### Segundo Cuatrimestre
 | # | Materia | Estado | Nota | Material |
 | :---: | :--- | :---: | :---: | :---: |
-| 06 | Sistemas de Tratamiento de Datos | 🔄 En curso | - | [📁 STD](./STD) |
-| 07 | Infraestructura de Telecomunicaciones | 🔄 En curso | - | [📁 TECO](./TECO) |
-| 08 | Sociedad y Estado | 🔄 En curso | - | [📁 SYE](./SYE) |
-| 09 | Sistemas Operativos II | 🔄 En curso | - | [📁 SO2](./SO2) |
-| 10 | Lenguajes de Programación | 🔄 En curso | - | [📁 LDP](./LDP) |
+| 06 | Sistemas de Tratamiento de Datos | 🔄 En curso | - | [📁 STD](./1er%20año/2do%20Cuatrimestre/STD) |
+| 07 | Infraestructura de Telecomunicaciones | 🔄 En curso | - | [📁 TECO](./1er%20año/2do%20Cuatrimestre/TECO) |
+| 08 | Sociedad y Estado | 🔄 En curso | - | [📁 SYE](./1er%20año/2do%20Cuatrimestre/SYE) |
+| 09 | Sistemas Operativos II | 🔄 En curso | - | [📁 SO2](./1er%20año/2do%20Cuatrimestre/SO2) |
+| 10 | Lenguajes de Programación | 🔄 En curso | - | [📁 LDP](./1er%20año/2do%20Cuatrimestre/LDP) |
 
 ---
 
