@@ -1,0 +1,510 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 8 0 R 10 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R /F4 12 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 6461 >>
+stream
+0.11 0.29 0.55 rg
+40 772 515 40 re f
+1 1 1 rg
+BT /F2 14.5 Tf 52 791 Td (Instructivo Paso a Paso: Resolución del Laboratorio \(Packet Tracer\)) Tj ET
+0.85 0.92 1 rg
+BT /F1 9.2 Tf 52 778 Td (Explicación detallada de comandos, fundamentos de cada paso, analogías y métodos de verificación) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 11.5 Tf 40 754 Td (Fase 0: Configuraciones Iniciales \(R1, SW-CORE, SW-ACC1 y SW-ACC2\)) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 751 m 555 751 l S
+0.1 0.1 0.1 rg
+BT /F2 8.8 Tf 42 739 Td (¿Por qué se hace?) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 128 739 Td (Para identificar cada equipo en la consola \(hostname\) y evitar que el IOS se bloquee buscando) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 42 727.5 Td (por DNS si escribimos mal un comando \(no ip domain-lookup\).) Tj ET
+0.95 0.96 0.98 rg
+45 672.5 505 52 re f
+0.5 w 0.8 0.84 0.9 RG
+45 672.5 m 550 672.5 l S
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 713.5 Td (enable) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 703 Td (configure terminal) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 692.5 Td (hostname SW-CORE      ! Cambiar por SW-ACC1, SW-ACC2 o R1 según el equipo) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 682 Td (no ip domain-lookup) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.4 Tf 45 663.5 Td (• enable: Pasa de modo usuario \(>\) a privilegiado \(#\). | configure terminal: Entra a configuración global \(config\)#.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.4 Tf 45 652.5 Td (• hostname <nombre>: Asigna el nombre al equipo.      | no ip domain-lookup: Desactiva traducción DNS en consola.) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 11.5 Tf 40 634.5 Td (Fase 1: Creación de VLANs en los 3 Switches \(SW-CORE, SW-ACC1 y SW-ACC2\)) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 631.5 m 555 631.5 l S
+0.1 0.1 0.1 rg
+BT /F2 8.8 Tf 42 619.5 Td (¿Por qué se hace?) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 128 619.5 Td (Por defecto todos los puertos están en la VLAN 1 \(un único dominio de broadcast\). Al crear VLANs) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 42 608 Td (segmentamos el switch físicamente en redes lógicas separadas, mejorando la seguridad y el rendimiento.) Tj ET
+0.93 0.97 1 rg
+42 563 511 41 re f
+0.12 0.45 0.82 rg
+42 563 4 41 re f
+0.12 0.45 0.82 rg
+BT /F4 9.5 Tf 52 592 Td (H) Tj ET
+0.12 0.45 0.82 rg
+BT /F2 8.8 Tf 64 592 Td ([ANALOGÍA] El edificio de oficinas) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 580.5 Td (Sin VLANs, el switch es un galpón abierto donde todos se escuchan gritar. Crear VLANs es levantar paredes acústicas) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 569 Td (por departamento \(Ventas, Admin, IT, Gestión\): aunque compartan el edificio, un sector no escucha al otro.) Tj ET
+0.95 0.96 0.98 rg
+45 434 505 115 re f
+0.5 w 0.8 0.84 0.9 RG
+45 434 m 550 434 l S
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 538 Td (configure terminal) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 527.5 Td (vlan 10) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 517 Td ( name VENTAS) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 506.5 Td (vlan 20) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 496 Td ( name ADMIN) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 485.5 Td (vlan 30) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 475 Td ( name IT_SERVERS) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 464.5 Td (vlan 99) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 454 Td ( name MGMT_NATIVA) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 443.5 Td (exit) Tj ET
+1 0.94 0.94 rg
+42 380 511 41 re f
+0.8 0.18 0.18 rg
+42 380 4 41 re f
+0.8 0.18 0.18 rg
+BT /F4 9.5 Tf 52 409 Td (v) Tj ET
+0.8 0.18 0.18 rg
+BT /F2 8.8 Tf 64 409 Td ([NOTA IMPORTANTE] Crear las 4 VLANs en los 3 Switches) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 397.5 Td (Debes crear las VLANs 10, 20, 30 y 99 también en SW-CORE y SW-ACC1 aunque SW-CORE no tenga PCs y SW-ACC1 no tenga) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 386 Td (hosts de la VLAN 30. Si un switch no conoce una VLAN en su base de datos, NO reenviará su tráfico por los Trunks.) Tj ET
+0.12 0.5 0.22 rg
+BT /F4 9.5 Tf 45 369 Td (4) Tj ET
+0.12 0.5 0.22 rg
+BT /F2 8.5 Tf 57 369 Td ([COMPROBACIÓN Fase 1]:) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 168 369 Td (Ejecuta 'show vlan brief' en cada switch. Las VLANs 10, 20, 30 y 99 deben figurar 'active'.) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 11.5 Tf 40 351 Td (Fase 2: Asignación de Puertos de Acceso hacia los Hosts \(SW-ACC1 y SW-ACC2\)) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 348 m 555 348 l S
+0.1 0.1 0.1 rg
+BT /F2 8.8 Tf 42 336 Td (¿Por qué se hace?) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 128 336 Td (Crear la VLAN no mueve los puertos; debemos indicar qué puerto físico va a cada VLAN y fijarlo) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 42 324.5 Td (en modo acceso \(switchport mode access\) para que envíe tramas sin etiquetar y desactive negociación DTP.) Tj ET
+0.95 0.96 0.98 rg
+45 154 505 167.5 re f
+0.5 w 0.8 0.84 0.9 RG
+45 154 m 550 154 l S
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 310.5 Td (! En SW-ACC1 \(PC1 y PC2 en VLAN 10 | PC3 en VLAN 20\):) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 300 Td (interface range fastEthernet 0/3 - 4) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 289.5 Td ( switchport mode access) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 279 Td ( switchport access vlan 10) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 268.5 Td (interface fastEthernet 0/5) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 258 Td ( switchport mode access) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 247.5 Td ( switchport access vlan 20) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 237 Td () Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 226.5 Td (! En SW-ACC2 \(PC4 en VLAN 10 | Laptop1, SRV-WEB y SRV-DNS en VLAN 30\):) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 216 Td (interface fastEthernet 0/3) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 205.5 Td ( switchport mode access) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 195 Td ( switchport access vlan 10) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 184.5 Td (interface range fastEthernet 0/4 - 6) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 174 Td ( switchport mode access) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 163.5 Td ( switchport access vlan 30) Tj ET
+0.12 0.5 0.22 rg
+BT /F4 9.5 Tf 45 145 Td (4) Tj ET
+0.12 0.5 0.22 rg
+BT /F2 8.5 Tf 57 145 Td ([COMPROBACIÓN Fase 2]:) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 168 145 Td (Con 'show vlan brief' verifica que Fa0/3-6 aparezcan al lado de su VLAN correspondiente.) Tj ET
+0.4 0.4 0.4 rg
+BT /F1 8 Tf 270 22 Td (Página 1 de 3) Tj ET
+
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R /F4 12 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 7322 >>
+stream
+0.11 0.29 0.55 rg
+40 780 515 30 re f
+1 1 1 rg
+BT /F2 12.2 Tf 52 790 Td (Fase 3 \(Trunks 802.1Q\), Fase 4 \(Spanning Tree Protocol\) y Fase 5 \(Router-on-a-Stick\)) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 11.5 Tf 40 758 Td (Fase 3: Configuración de Enlaces Troncales \(Trunks 802.1Q en los 3 Switches\)) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 755 m 555 755 l S
+0.1 0.1 0.1 rg
+BT /F2 8.8 Tf 42 743 Td (¿Por qué se hace?) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 128 743 Td (Permite pasar tráfico de múltiples VLANs por un solo cable entre switches y hacia el router,) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 42 731.5 Td (agregando una etiqueta \(tag\) IEEE 802.1Q a cada trama indicando a qué VLAN pertenece.) Tj ET
+0.93 0.97 1 rg
+42 686.5 511 41 re f
+0.12 0.45 0.82 rg
+42 686.5 4 41 re f
+0.12 0.45 0.82 rg
+BT /F4 9.5 Tf 52 715.5 Td (H) Tj ET
+0.12 0.45 0.82 rg
+BT /F2 8.8 Tf 64 715.5 Td ([ANALOGÍA] La autopista con stickers en el parabrisas) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 704 Td (Un puerto access es un carril exclusivo para un solo departamento. Un Trunk es una autopista donde viajan autos de todas) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 692.5 Td (las VLANs con un sticker \(tag 802.1Q\) en el parabrisas, excepto los de la VLAN Nativa \(99\), que viajan sin etiqueta.) Tj ET
+0.95 0.96 0.98 rg
+45 547 505 125.5 re f
+0.5 w 0.8 0.84 0.9 RG
+45 547 m 550 547 l S
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 661.5 Td (! En SW-CORE \(tiene 3 Trunks: Fa0/1, Fa0/2 y Gi0/1 hacia R1\):) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 651 Td (interface range fastEthernet 0/1 - 2, gigabitEthernet 0/1) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 640.5 Td ( switchport mode trunk) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 630 Td ( switchport trunk native vlan 99) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 619.5 Td ( switchport trunk allowed vlan 10,20,30,99) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 609 Td () Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 598.5 Td (! En SW-ACC1 y SW-ACC2 \(tienen 2 Trunks cada uno: Fa0/1 y Fa0/2\):) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 588 Td (interface range fastEthernet 0/1 - 2) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 577.5 Td ( switchport mode trunk) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 567 Td ( switchport trunk native vlan 99) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 556.5 Td ( switchport trunk allowed vlan 10,20,30,99) Tj ET
+0.12 0.5 0.22 rg
+BT /F4 9.5 Tf 45 538 Td (4) Tj ET
+0.12 0.5 0.22 rg
+BT /F2 8.5 Tf 57 538 Td ([COMPROBACIÓN Fase 3]:) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 168 538 Td ('show interfaces trunk' -> Status: trunking, Encapsulation: 802.1q, Native vlan: 99.) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 11.5 Tf 40 520 Td (Fase 4: Spanning Tree Protocol \(STP\) para romper el Ciclo de Capa 2) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 517 m 555 517 l S
+0.1 0.1 0.1 rg
+BT /F2 8.8 Tf 42 505 Td (¿Por qué se hace?) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 128 505 Td (El triángulo SW-CORE <-> SW-ACC1 <-> SW-ACC2 da redundancia, pero sin STP los broadcasts) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 42 493.5 Td (girarían infinitamente \(tormenta de broadcast\). STP bloquea lógicamente 1 puerto \(Fa0/2 en SW-ACC2\) y lo deja de respaldo.) Tj ET
+0.95 0.96 0.98 rg
+45 312.5 505 178 re f
+0.5 w 0.8 0.84 0.9 RG
+45 312.5 m 550 312.5 l S
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 479.5 Td (! En SW-CORE \(Forzar como Root Bridge Principal\):) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 469 Td (spanning-tree mode rapid-pvst) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 458.5 Td (spanning-tree vlan 10,20,30,99 root primary) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 448 Td () Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 437.5 Td (! En SW-ACC1 \(Root Secundario + PortFast y BPDU Guard en puertos de PCs\):) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 427 Td (spanning-tree mode rapid-pvst) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 416.5 Td (spanning-tree vlan 10,20,30,99 root secondary) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 406 Td (interface range fastEthernet 0/3 - 5) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 395.5 Td ( spanning-tree portfast) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 385 Td ( spanning-tree bpduguard enable) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 374.5 Td () Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 364 Td (! En SW-ACC2 \(Rapid-PVST + PortFast y BPDU Guard en puertos de PCs/Servidores\):) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 353.5 Td (spanning-tree mode rapid-pvst) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 343 Td (interface range fastEthernet 0/3 - 6) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 332.5 Td ( spanning-tree portfast) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 322 Td ( spanning-tree bpduguard enable) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.3 Tf 45 303.5 Td (• portfast: Pasa el puerto de acceso a FWD inmediatamente sin esperar 30s. | bpduguard: Apaga el puerto si conectan otro switch.) Tj ET
+0.12 0.5 0.22 rg
+BT /F4 9.5 Tf 45 291.5 Td (4) Tj ET
+0.12 0.5 0.22 rg
+BT /F2 8.5 Tf 57 291.5 Td ([COMPROBACIÓN Fase 4]:) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 168 291.5 Td ('show spanning-tree vlan 10' -> SW-CORE es Root y SW-ACC2 muestra Fa0/2 en 'Altn BLK'.) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 11.5 Tf 40 273.5 Td (Fase 5: Ruteo Inter-VLAN \(Router-on-a-Stick en R1\)) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 270.5 m 555 270.5 l S
+0.1 0.1 0.1 rg
+BT /F2 8.8 Tf 42 258.5 Td (¿Por qué se hace?) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 128 258.5 Td (Los switches de Capa 2 no comunican VLANs distintas entre sí. En R1 dividimos la interfaz física) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 42 247 Td (Gi0/0 en 4 subinterfaces virtuales \(.10, .20, .30 y .99\) para que cada VLAN tenga su propio Default Gateway.) Tj ET
+0.95 0.96 0.98 rg
+45 87 505 157 re f
+0.5 w 0.8 0.84 0.9 RG
+45 87 m 550 87 l S
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 233 Td (interface gigabitEthernet 0/0.10) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 222.5 Td ( encapsulation dot1Q 10) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 212 Td ( ip address 192.168.10.1 255.255.255.0) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 201.5 Td (interface gigabitEthernet 0/0.20) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 191 Td ( encapsulation dot1Q 20) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 180.5 Td ( ip address 192.168.20.1 255.255.255.0) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 170 Td (interface gigabitEthernet 0/0.30) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 159.5 Td ( encapsulation dot1Q 30) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 149 Td ( ip address 192.168.30.1 255.255.255.0) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 138.5 Td (interface gigabitEthernet 0/0.99) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 128 Td ( encapsulation dot1Q 99 native) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 117.5 Td ( ip address 192.168.99.1 255.255.255.0) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 107 Td (interface gigabitEthernet 0/0) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 96.5 Td ( no shutdown) Tj ET
+0.8 0.18 0.18 rg
+BT /F4 9.5 Tf 45 78 Td (v) Tj ET
+0.8 0.18 0.18 rg
+BT /F2 8.5 Tf 57 78 Td ([NOTA IMPORTANTE]:) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 152 78 Td (Ejecuta siempre 'encapsulation dot1Q <X>' ANTES de 'ip address', y no olvides 'no shutdown' en Gi0/0.) Tj ET
+0.4 0.4 0.4 rg
+BT /F1 8 Tf 270 22 Td (Página 2 de 3) Tj ET
+
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R /F4 12 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 6484 >>
+stream
+0.11 0.29 0.55 rg
+40 780 515 30 re f
+1 1 1 rg
+BT /F2 12.5 Tf 52 790 Td (Fase 6 \(Servidor DHCP en R1\), Fase 7 \(Gestión SVI Switches\) y Fase 8 \(Pruebas\)) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 11.5 Tf 40 758 Td (Fase 6: Configuración del Servidor DHCP en R1 y Hosts) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 755 m 555 755 l S
+0.1 0.1 0.1 rg
+BT /F2 8.8 Tf 42 743 Td (¿Por qué se hace?) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 128 743 Td (Automatiza la entrega de IP, máscara, gateway y DNS a las PCs de usuarios \(VLANs 10 y 20\),) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 42 731.5 Td (mientras que los servidores y la Laptop de IT \(VLAN 30\) usan IP estática para tener direcciones fijas conocidas.) Tj ET
+0.95 0.96 0.98 rg
+45 582 505 146.5 re f
+0.5 w 0.8 0.84 0.9 RG
+45 582 m 550 582 l S
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 717.5 Td (! En R1 \(Excluir de la .1 a la .10 y crear los 2 Pools DHCP\):) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 707 Td (ip dhcp excluded-address 192.168.10.1 192.168.10.10) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 696.5 Td (ip dhcp excluded-address 192.168.20.1 192.168.20.10) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 686 Td () Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 675.5 Td (ip dhcp pool POOL_VENTAS) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 665 Td ( network 192.168.10.0 255.255.255.0) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 654.5 Td ( default-router 192.168.10.1) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 644 Td ( dns-server 192.168.30.11) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 633.5 Td () Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 623 Td (ip dhcp pool POOL_ADMIN) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 612.5 Td ( network 192.168.20.0 255.255.255.0) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 602 Td ( default-router 192.168.20.1) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 591.5 Td ( dns-server 192.168.30.11) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.4 Tf 45 573 Td (• En PC1, PC2, PC3 y PC4: ir a Desktop -> IP Configuration -> marcar 'DHCP' \(recibirán .10.11, .10.12, .20.11 y .10.13\).) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.4 Tf 45 561.5 Td (• En Laptop1 \(.30.50\), SRV-WEB \(.30.10\) y SRV-DNS \(.30.11\): configurar IP Estática con máscara /24 y GW 192.168.30.1.) Tj ET
+0.12 0.5 0.22 rg
+BT /F4 9.5 Tf 45 549.5 Td (4) Tj ET
+0.12 0.5 0.22 rg
+BT /F2 8.5 Tf 57 549.5 Td ([COMPROBACIÓN Fase 6]:) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 168 549.5 Td (En R1 ejecuta 'show ip dhcp binding' para ver las 4 IPs entregadas a las MACs de las PCs.) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 11.5 Tf 40 531.5 Td (Fase 7: Gestión Remota de los Switches \(SVI en VLAN 99\)) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 528.5 m 555 528.5 l S
+0.1 0.1 0.1 rg
+BT /F2 8.8 Tf 42 516.5 Td (¿Por qué se hace?) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 128 516.5 Td (Para poder administrar o hacer ping a los switches desde otra subred \(como la Laptop1 de IT\).) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.8 Tf 42 505 Td (Se configura la interfaz virtual 'interface vlan 99' y su 'ip default-gateway 192.168.99.1' en cada switch.) Tj ET
+0.95 0.96 0.98 rg
+45 429 505 73 re f
+0.5 w 0.8 0.84 0.9 RG
+45 429 m 550 429 l S
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 491 Td (! En SW-CORE \(usar .99.2\), SW-ACC1 \(usar .99.3\) y SW-ACC2 \(usar .99.4\):) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 480.5 Td (interface vlan 99) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 470 Td ( ip address 192.168.99.2 255.255.255.0   ! Cambiar a .99.3 en SW-ACC1 y .99.4 en SW-ACC2) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 459.5 Td ( no shutdown) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 449 Td (exit) Tj ET
+0.12 0.22 0.38 rg
+BT /F3 8.2 Tf 54 438.5 Td (ip default-gateway 192.168.99.1) Tj ET
+1 0.94 0.94 rg
+42 375 511 41 re f
+0.8 0.18 0.18 rg
+42 375 4 41 re f
+0.8 0.18 0.18 rg
+BT /F4 9.5 Tf 52 404 Td (v) Tj ET
+0.8 0.18 0.18 rg
+BT /F2 8.8 Tf 64 404 Td ([NOTA IMPORTANTE] ¿Por qué hace falta ip default-gateway en el switch?) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 392.5 Td (Un switch de Capa 2 no tiene tabla de ruteo. Si olvidas 'ip default-gateway 192.168.99.1', el switch no sabrá cómo) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 381 Td (devolver los paquetes de respuesta cuando le hagas ping desde Laptop1 \(192.168.30.50\) u otra VLAN.) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 11.5 Tf 40 356 Td (Fase 8: Guardado y Batería de Comprobaciones Finales) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 353 m 555 353 l S
+0.15 0.15 0.15 rg
+BT /F1 8.6 Tf 45 341 Td (1. Guardar en NVRAM en los 4 equipos: ejecutar 'copy running-config startup-config' \(o 'write memory'\) en modo #.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.6 Tf 45 328 Td (2. Desde el Command Prompt de Laptop1 \(192.168.30.50\), probar conectividad extremo a extremo:) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 8.2 Tf 58 316 Td (ping 192.168.30.1    -> Verifica acceso a su propio Gateway en R1 \(Gi0/0.30\).) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 8.2 Tf 58 305 Td (ping 192.168.10.11   -> Verifica ruteo Inter-VLAN hacia PC1 \(VLAN 10 - DHCP\).) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 8.2 Tf 58 294 Td (ping 192.168.20.11   -> Verifica ruteo Inter-VLAN hacia PC3 \(VLAN 20 - DHCP\).) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 8.2 Tf 58 283 Td (ping 192.168.99.2    -> Verifica gestión remota de SW-CORE \(repetir con .99.3 y .99.4\).) Tj ET
+0.93 0.98 0.94 rg
+42 238 511 41 re f
+0.14 0.55 0.28 rg
+42 238 4 41 re f
+0.14 0.55 0.28 rg
+BT /F4 9.5 Tf 52 267 Td (+) Tj ET
+0.14 0.55 0.28 rg
+BT /F2 8.8 Tf 64 267 Td ([EJEMPLO PRÁCTICO] Prueba de alta disponibilidad STP) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 255.5 Td (Borra temporalmente el cable entre SW-CORE \(Fa0/2\) y SW-ACC2 \(Fa0/1\) y ejecuta 'show spanning-tree vlan 10' en SW-ACC2:) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 244 Td (verás que Fa0/2 pasa de 'Altn BLK' a 'Root FWD' en 1 segundo y el ping hacia Laptop1 \(192.168.30.50\) sigue funcionando.) Tj ET
+1 0.97 0.9 rg
+42 182 511 41 re f
+0.82 0.48 0.05 rg
+42 182 4 41 re f
+0.82 0.48 0.05 rg
+BT /F4 9.5 Tf 52 211 Td (u) Tj ET
+0.82 0.48 0.05 rg
+BT /F2 8.8 Tf 64 211 Td ([CONSIDERACIÓN] Pérdida del primer paquete de Ping \(ARP\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 199.5 Td (En Packet Tracer es normal que el 1er o 2do paquete de un ping nuevo dé 'Request timed out' mientras se resuelven) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 52 188 Td (las tablas ARP en cada salto. Al repetir el mismo comando ping inmediatamente, responderán los 4 de 4 paquetes \(100%\).) Tj ET
+0.4 0.4 0.4 rg
+BT /F1 8 Tf 270 22 Td (Página 3 de 3) Tj ET
+
+endstream
+endobj
+12 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /ZapfDingbats >>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000128 00000 n 
+0000000285 00000 n 
+0000000382 00000 n 
+0000000484 00000 n 
+0000000579 00000 n 
+0000007092 00000 n 
+0000007249 00000 n 
+0000014623 00000 n 
+0000014782 00000 n 
+0000021319 00000 n 
+trailer
+<< /Size 13 /Root 1 0 R >>
+startxref
+21393
+%%EOF

@@ -1,0 +1,501 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 8 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 7459 >>
+stream
+0.11 0.29 0.55 rg
+40 770 515 42 re f
+1 1 1 rg
+BT /F2 15 Tf 52 790 Td (Laboratorio de Red Empresarial Jerárquica \(Cisco Packet Tracer\)) Tj ET
+0.85 0.92 1 rg
+BT /F1 9.5 Tf 52 777 Td (Práctica de VLANs, Trunks \(802.1Q\), Spanning Tree Protocol \(STP\), Router-on-a-Stick y DHCP) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 40 750 Td (Este documento describe una topología empresarial \(Núcleo/Distribución colapsado + Acceso\) para practicar comandos) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.5 Tf 40 737 Td (y conceptos en Cisco Packet Tracer, incluyendo un ciclo de Capa 2 para aplicar STP y asignación IP por DHCP/Estática.) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 12 Tf 40 713 Td (1. Equipos a colocar en Packet Tracer) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 709 m 555 709 l S
+0.1 0.1 0.1 rg
+BT /F2 9.5 Tf 45 696 Td (• Capa de Núcleo / Distribución \(Colapsada\):) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.2 Tf 58 683 Td (- R1: 1 Router \(Cisco 2911 o 1941\) -> Gateway \(Router-on-a-Stick\) y Servidor DHCP.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.2 Tf 58 670 Td (- SW-CORE: 1 Switch \(Cisco 2960 o 3560\) -> Punto central hacia el router y switches de acceso \(IP VLAN 99: 192.168.99.2\).) Tj ET
+0.1 0.1 0.1 rg
+BT /F2 9.5 Tf 45 655 Td (• Capa de Acceso:) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.2 Tf 58 642 Td (- SW-ACC1: Switch Cisco 2960 \(Piso 1 - Ventas y Administración\) -> IP Gestión VLAN 99: 192.168.99.3.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.2 Tf 58 629 Td (- SW-ACC2: Switch Cisco 2960 \(Piso 2 - Ventas e IT/Servidores\)  -> IP Gestión VLAN 99: 192.168.99.4.) Tj ET
+0.1 0.1 0.1 rg
+BT /F2 9.5 Tf 45 614 Td (• Hosts \(7 dispositivos finales\):) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9.2 Tf 58 601 Td (- PC1, PC2, PC3, PC4 \(PCs por DHCP\), Laptop1 \(IT - Estática\), SRV-WEB y SRV-DNS \(2 Servidores - Estática\).) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 12 Tf 40 577 Td (2. Diagrama de Topología Completa \(Equipos, Puertos, VLANs e IPs\)) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 573 m 555 573 l S
+0.95 0.97 0.99 rg
+40 342 515 225 re f
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 552 Td (                           [       R1 \(Router\)       ]) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 543 Td (                           [ Gi0/0.10: 192.168.10.1  ]) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 534 Td (                           [ Gi0/0.20: 192.168.20.1  ]) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 525 Td (                           [ Gi0/0.30: 192.168.30.1  ]) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 516 Td (                           [ Gi0/0.99: 192.168.99.1  ]) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 507 Td (                                        | Gi0/0 \(Trunk 802.1Q\)) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 498 Td (                                        | Gi0/1) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 489 Td (                           [         SW-CORE         ]) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 480 Td (                           [ VLAN 99: 192.168.99.2   ]) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 471 Td (                                  /           \\) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 462 Td (                    \(Trunk\) Fa0/1/             \\Fa0/2 \(Trunk\)) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 453 Td (                                /               \\) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 444 Td (                         Fa0/1 /                 \\ Fa0/1) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 435 Td (          [       SW-ACC1       ]---------------[       SW-ACC2       ]) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 426 Td (          [ VLAN 99: 192.168.99.3] Fa0/2   Fa0/2 [ VLAN 99: 192.168.99.4]) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 417 Td (             /       |       \\     \(Trunk/Ciclo\)   /      |       |      \\) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 408 Td (       Fa0/3/  Fa0/4 |  Fa0/5 \\              Fa0/3/ Fa0/4 | Fa0/5 |  Fa0/6\\) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 399 Td (           /         |         \\                 /        |       |        \\) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 390 Td (       [PC1]       [PC2]      [PC3]          [PC4]   [Laptop1] [SRV-WEB] [SRV-DNS]) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 381 Td (       VL 10       VL 10      VL 20          VL 10     VL 30     VL 30     VL 30) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 372 Td (       \(DHCP\)      \(DHCP\)     \(DHCP\)         \(DHCP\)  \(Estática\)\(Estática\)\(Estática\)) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 363 Td (     192.168.    192.168.   192.168.       192.168.   192.168.  192.168.  192.168.) Tj ET
+0.1 0.2 0.35 rg
+BT /F3 7.8 Tf 46 354 Td (       10.11       10.12      20.11          10.13      30.50     30.10     30.11) Tj ET
+0.1 0.1 0.1 rg
+BT /F2 9.5 Tf 45 324 Td (• El Ciclo \(Loop de Capa 2\) y configuración de STP:) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 58 311 Td (- Trunks: SW-CORE\(Fa0/1\)<->SW-ACC1\(Fa0/1\), SW-CORE\(Fa0/2\)<->SW-ACC2\(Fa0/1\) y SW-ACC1\(Fa0/2\)<->SW-ACC2\(Fa0/2\).) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 58 298 Td (- Activar Rapid PVST+ \(spanning-tree mode rapid-pvst\) en los 3 switches.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 58 285 Td (- Forzar SW-CORE como Root Primary \(spanning-tree vlan 10,20,30,99 root primary\) y SW-ACC1 como Root Secondary.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 58 272 Td (- Activar PortFast y BPDU Guard en todos los puertos de acceso conectados a PCs/Laptop/Servidores.) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 12 Tf 40 248 Td (3. Tabla de Subredes y VLANs) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 244 m 555 244 l S
+0.18 0.36 0.62 rg
+40 226 515 16 re f
+1 1 1 rg
+BT /F2 8.5 Tf 45 230 Td (VLAN ID) Tj ET
+1 1 1 rg
+BT /F2 8.5 Tf 95 230 Td (Nombre) Tj ET
+1 1 1 rg
+BT /F2 8.5 Tf 162 230 Td (Subred / Máscara) Tj ET
+1 1 1 rg
+BT /F2 8.5 Tf 265 230 Td (Gateway \(R1\)) Tj ET
+1 1 1 rg
+BT /F2 8.5 Tf 400 230 Td (Asignación IP) Tj ET
+0.98 0.99 1 rg
+40 210 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 8.5 Tf 45 214 Td (VLAN 10) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 95 214 Td (VENTAS) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 162 214 Td (192.168.10.0 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 265 214 Td (192.168.10.1 \(Gi0/0.10\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 400 214 Td (DHCP \(Excluir .1 a .10\)) Tj ET
+0.94 0.96 0.99 rg
+40 194 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 8.5 Tf 45 198 Td (VLAN 20) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 95 198 Td (ADMIN) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 162 198 Td (192.168.20.0 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 265 198 Td (192.168.20.1 \(Gi0/0.20\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 400 198 Td (DHCP \(Excluir .1 a .10\)) Tj ET
+0.98 0.99 1 rg
+40 178 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 8.5 Tf 45 182 Td (VLAN 30) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 95 182 Td (IT_SERVERS) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 162 182 Td (192.168.30.0 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 265 182 Td (192.168.30.1 \(Gi0/0.30\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 400 182 Td (Estática \(Servidores y Laptop\)) Tj ET
+0.94 0.96 0.99 rg
+40 162 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 8.5 Tf 45 166 Td (VLAN 99) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 95 166 Td (MGMT_NATIVA) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 162 166 Td (192.168.99.0 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 8.5 Tf 265 166 Td (192.168.99.1 \(Gi0/0.99\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 8.5 Tf 400 166 Td (Estática \(SVI Switches + Nativa\)) Tj ET
+0.4 0.4 0.4 rg
+BT /F1 8 Tf 270 25 Td (Página 1 de 2) Tj ET
+
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 10689 >>
+stream
+0.11 0.29 0.55 rg
+40 780 515 32 re f
+1 1 1 rg
+BT /F2 13 Tf 52 791 Td (Direccionamiento IP por Dispositivo, Puertos por Switch y Checklist) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 12 Tf 40 755 Td (4. Tabla Completa de Direccionamiento IP por Dispositivo) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 751 m 555 751 l S
+0.18 0.36 0.62 rg
+40 733 515 16 re f
+1 1 1 rg
+BT /F2 8 Tf 44 737 Td (Dispositivo) Tj ET
+1 1 1 rg
+BT /F2 8 Tf 105 737 Td (Interfaz) Tj ET
+1 1 1 rg
+BT /F2 8 Tf 165 737 Td (Conectado a) Tj ET
+1 1 1 rg
+BT /F2 8 Tf 245 737 Td (VLAN) Tj ET
+1 1 1 rg
+BT /F2 8 Tf 300 737 Td (Dirección IP / Máscara) Tj ET
+1 1 1 rg
+BT /F2 8 Tf 405 737 Td (Gateway) Tj ET
+1 1 1 rg
+BT /F2 8 Tf 470 737 Td (Modo / DNS) Tj ET
+0.98 0.99 1 rg
+40 717 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 721 Td (R1 \(Router\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 721 Td (Gi0/0.10) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 721 Td (SW-CORE \(Gi0/1\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 721 Td (10 \(VENTAS\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 721 Td (192.168.10.1 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 721 Td (N/A \(Es GW\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 721 Td (Estática \(dot1Q 10\)) Tj ET
+0.94 0.96 0.99 rg
+40 701 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 705 Td (R1 \(Router\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 705 Td (Gi0/0.20) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 705 Td (SW-CORE \(Gi0/1\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 705 Td (20 \(ADMIN\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 705 Td (192.168.20.1 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 705 Td (N/A \(Es GW\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 705 Td (Estática \(dot1Q 20\)) Tj ET
+0.98 0.99 1 rg
+40 685 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 689 Td (R1 \(Router\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 689 Td (Gi0/0.30) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 689 Td (SW-CORE \(Gi0/1\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 689 Td (30 \(IT_SRV\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 689 Td (192.168.30.1 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 689 Td (N/A \(Es GW\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 689 Td (Estática \(dot1Q 30\)) Tj ET
+0.94 0.96 0.99 rg
+40 669 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 673 Td (R1 \(Router\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 673 Td (Gi0/0.99) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 673 Td (SW-CORE \(Gi0/1\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 673 Td (99 \(NATIVA\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 673 Td (192.168.99.1 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 673 Td (N/A \(Es GW\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 673 Td (Estática \(dot1Q 99\)) Tj ET
+0.98 0.99 1 rg
+40 653 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 657 Td (SW-CORE) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 657 Td (Vlan 99) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 657 Td (SVI Gestión) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 657 Td (99 \(NATIVA\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 657 Td (192.168.99.2 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 657 Td (192.168.99.1) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 657 Td (Estática \(SVI\)) Tj ET
+0.94 0.96 0.99 rg
+40 637 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 641 Td (SW-ACC1) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 641 Td (Vlan 99) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 641 Td (SVI Gestión) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 641 Td (99 \(NATIVA\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 641 Td (192.168.99.3 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 641 Td (192.168.99.1) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 641 Td (Estática \(SVI\)) Tj ET
+0.98 0.99 1 rg
+40 621 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 625 Td (SW-ACC2) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 625 Td (Vlan 99) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 625 Td (SVI Gestión) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 625 Td (99 \(NATIVA\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 625 Td (192.168.99.4 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 625 Td (192.168.99.1) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 625 Td (Estática \(SVI\)) Tj ET
+0.94 0.96 0.99 rg
+40 605 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 609 Td (PC1) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 609 Td (Fa0) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 609 Td (SW-ACC1 \(Fa0/3\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 609 Td (10 \(VENTAS\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 609 Td (192.168.10.11 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 609 Td (192.168.10.1) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 609 Td (DHCP \(DNS .30.11\)) Tj ET
+0.98 0.99 1 rg
+40 589 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 593 Td (PC2) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 593 Td (Fa0) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 593 Td (SW-ACC1 \(Fa0/4\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 593 Td (10 \(VENTAS\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 593 Td (192.168.10.12 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 593 Td (192.168.10.1) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 593 Td (DHCP \(DNS .30.11\)) Tj ET
+0.94 0.96 0.99 rg
+40 573 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 577 Td (PC3) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 577 Td (Fa0) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 577 Td (SW-ACC1 \(Fa0/5\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 577 Td (20 \(ADMIN\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 577 Td (192.168.20.11 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 577 Td (192.168.20.1) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 577 Td (DHCP \(DNS .30.11\)) Tj ET
+0.98 0.99 1 rg
+40 557 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 561 Td (PC4) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 561 Td (Fa0) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 561 Td (SW-ACC2 \(Fa0/3\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 561 Td (10 \(VENTAS\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 561 Td (192.168.10.13 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 561 Td (192.168.10.1) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 561 Td (DHCP \(DNS .30.11\)) Tj ET
+0.94 0.96 0.99 rg
+40 541 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 545 Td (Laptop1) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 545 Td (Fa0) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 545 Td (SW-ACC2 \(Fa0/4\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 545 Td (30 \(IT_SRV\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 545 Td (192.168.30.50 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 545 Td (192.168.30.1) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 545 Td (Estática \(DNS .30.11\)) Tj ET
+0.98 0.99 1 rg
+40 525 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 529 Td (SRV-WEB) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 529 Td (Fa0) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 529 Td (SW-ACC2 \(Fa0/5\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 529 Td (30 \(IT_SRV\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 529 Td (192.168.30.10 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 529 Td (192.168.30.1) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 529 Td (Estática \(DNS .30.11\)) Tj ET
+0.94 0.96 0.99 rg
+40 509 515 16 re f
+0.1 0.1 0.1 rg
+BT /F2 7.8 Tf 44 513 Td (SRV-DNS) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 105 513 Td (Fa0) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 165 513 Td (SW-ACC2 \(Fa0/6\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 245 513 Td (30 \(IT_SRV\)) Tj ET
+0.1 0.25 0.45 rg
+BT /F3 7.8 Tf 300 513 Td (192.168.30.11 /24) Tj ET
+0.15 0.15 0.15 rg
+BT /F3 7.8 Tf 405 513 Td (192.168.30.1) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 7.8 Tf 470 513 Td (Estática \(DNS .30.11\)) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 12 Tf 40 481 Td (5. Resumen de Configuración por Switch) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 477 m 555 477 l S
+0.11 0.29 0.55 rg
+BT /F2 9.5 Tf 45 463 Td (A. SW-CORE \(Núcleo/Distribución\) — IP SVI VLAN 99: 192.168.99.2 /24 \(Default-Gateway: 192.168.99.1\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 55 450 Td (• VLANs en base de datos: 10, 20, 30, 99 | STP: Root Bridge Primary para todas las VLANs.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 55 437 Td (• Puertos Trunk \(VLAN Nativa 99\): Gi0/1 \(hacia R1\), Fa0/1 \(hacia SW-ACC1\), Fa0/2 \(hacia SW-ACC2\) | Hosts: Ninguno.) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 9.5 Tf 45 419 Td (B. SW-ACC1 \(Acceso Piso 1\) — IP SVI VLAN 99: 192.168.99.3 /24 \(Default-Gateway: 192.168.99.1\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 55 406 Td (• VLANs en base de datos: 10, 20, 30, 99 | STP: Root Bridge Secondary | Trunks \(Nativa 99\): Fa0/1 y Fa0/2.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 55 393 Td (• Puertos Acceso: Fa0/3 -> PC1 \(VLAN 10, 192.168.10.11\), Fa0/4 -> PC2 \(VLAN 10, 192.168.10.12\),) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 55 380 Td (  Fa0/5 -> PC3 \(VLAN 20, 192.168.20.11\).) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 9.5 Tf 45 362 Td (C. SW-ACC2 \(Acceso Piso 2\) — IP SVI VLAN 99: 192.168.99.4 /24 \(Default-Gateway: 192.168.99.1\)) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 55 349 Td (• VLANs en base de datos: 10, 20, 30, 99 | STP: Fa0/2 quedará bloqueado \(BLK\) | Trunks \(Nativa 99\): Fa0/1 y Fa0/2.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 55 336 Td (• Puertos Acceso: Fa0/3 -> PC4 \(VLAN 10, 192.168.10.13\), Fa0/4 -> Laptop1 \(VLAN 30, 192.168.30.50\),) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 55 323 Td (  Fa0/5 -> SRV-WEB \(VLAN 30, 192.168.30.10\), Fa0/6 -> SRV-DNS \(VLAN 30, 192.168.30.11\).) Tj ET
+0.11 0.29 0.55 rg
+BT /F2 12 Tf 40 295 Td (6. Checklist de Objetivos para Resolver el Laboratorio) Tj ET
+1 w 0.11 0.29 0.55 RG
+40 291 m 555 291 l S
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 45 277 Td ([ ] 1. Capa 2 - VLANs y Accesos: Crear VLANs 10, 20, 30 y 99 en los 3 switches y asignar puertos de acceso.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 45 263 Td ([ ] 2. Capa 2 - Trunks: Configurar los enlaces entre switches y hacia el router en modo Trunk con VLAN nativa 99.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 45 249 Td ([ ] 3. Capa 2 - STP: Activar rapid-pvst, SW-CORE Root Primary, SW-ACC1 Root Secondary, PortFast y BPDU Guard.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 45 235 Td ([ ] 4. Capa 3 - Inter-VLAN Routing: Configurar subinterfaces Gi0/0.10, .20, .30 y .99 en R1 y encender Gi0/0.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 45 221 Td ([ ] 5. Servicios - DHCP: Crear pools POOL_VENTAS y POOL_ADMIN en R1 con exclusiones \(.1 a .10\) y DNS 192.168.30.11.) Tj ET
+0.15 0.15 0.15 rg
+BT /F1 9 Tf 45 207 Td ([ ] 6. Gestión \(SVI\): Configurar interface vlan 99 \(.99.2, .99.3 y .99.4\) y default-gateway \(.99.1\) en los 3 switches.) Tj ET
+0.4 0.4 0.4 rg
+BT /F1 8 Tf 270 25 Td (Página 2 de 2) Tj ET
+
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000267 00000 n 
+0000000364 00000 n 
+0000000466 00000 n 
+0000000561 00000 n 
+0000008072 00000 n 
+0000008218 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+18960
+%%EOF
